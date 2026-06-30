@@ -1,0 +1,43 @@
+.css-gradient{
+    background: #302a9b;
+    background: linear-gradient(157deg, rgba(48, 42, 155, 1) 0%, rgba(68, 119, 144, 1) 25%, rgba(87, 199, 133, 1) 50%, rgba(173, 212, 104, 1) 79%, rgba(237, 221, 83, 1) 100%);
+    width: auto;
+    height: 100px;
+}
+.video video{
+    max-width: 500px;
+    max-height: 300px;
+    float:left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+span p{
+    color: rgba(40, 44, 46);
+    opacity: .8;
+}
+
+.clear{
+    clear: left;
+}
+header h1{
+    text-transform:uppercase;
+    transform:skew(36deg);
+    text-align: center;
+    padding-top: 30px;
+    rotate: 5deg;
+    text-shadow: 6px 4px 2px #CE5A46;
+    letter-spacing: 5px;
+}
+header h1:hover{
+    transform: scale(2) translate(5px, 5px);
+   
+}
+
+span{
+    display: block;
+    background-image: url(media/kungpoa-watermark.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
