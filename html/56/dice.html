@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: brown;
+        }
+        .container{
+            display: grid;
+            gap: 1em;
+            border: 2px solid black;
+            margin: 10px;
+            width: 120px;
+            height: 120px;
+            justify-content: center;
+            padding: 10px;
+            padding-left: 12px;
+            background-color: antiquewhite;
+            border-radius: 20px;
+            
+            
+
+            grid-template-columns:1fr 1fr 1fr ;
+            grid-template-rows:1fr 1fr 1fr ;
+
+            grid-template-areas:
+            'top-left . top-right'
+            'left  center   right' 
+            'bottom-left . bottom-right';
+
+        }
+        .container div{
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: black;
+            align-self: center;
+        }
+
+        .top-left{
+            grid-area: top-left;
+        }
+        .left{
+            grid-area: left;
+        }
+         .bottom-left{
+            grid-area: bottom-left;
+        }
+        .top-right{
+            grid-area: top-right;
+        }
+        .right{
+            grid-area: right;
+        }
+        .bottom-right{
+            grid-area: bottom-right;
+        }
+        .center{
+            grid-area: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center"></div>
+    </div>
+
+     <div class="container">
+        <div class="top-left"></div>
+        <div class="bottom-right"></div>
+    </div>
+     <div class="container">
+        <div class="top-left"></div>
+        <div class="center"></div>
+        <div class="bottom-right"></div>
+    </div>
+     <div class="container">
+        <div class="top-left"></div>
+        <div class="bottom-left"></div>
+        <div class="top-right"></div>
+        <div class="bottom-right"></div>
+    </div>
+     <div class="container">
+        <div class="top-left"></div>
+        <div class="bottom-left"></div>
+        <div class="center"></div>
+        <div class="top-right"></div>
+        <div class="bottom-right"></div>
+    </div>
+     <div class="container">
+        <div class="top-left"></div>
+        <div class="left"></div>
+        <div class="bottom-left"></div>
+        <div class="top-right"></div>
+        <div class="right"></div>
+        <div class="bottom-right"></div>
+    </div>
+</body>
+</html>
