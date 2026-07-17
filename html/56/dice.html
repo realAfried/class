@@ -10,6 +10,7 @@
             background-color: brown;
         }
         .container{
+            position: absolute;
             display: grid;
             gap: 1em;
             border: 2px solid black;
@@ -17,12 +18,11 @@
             width: 120px;
             height: 120px;
             justify-content: center;
-            padding: 10px;
-            padding-left: 12px;
+            align-content: center;
+            padding: 12px;
+            /* padding-left: 12px; */
             background-color: antiquewhite;
-            border-radius: 20px;
-            
-            
+            /* border-radius: 20px; */
 
             grid-template-columns:1fr 1fr 1fr ;
             grid-template-rows:1fr 1fr 1fr ;
@@ -31,7 +31,8 @@
             'top-left . top-right'
             'left  center   right' 
             'bottom-left . bottom-right';
-
+            box-sizing: border-box;
+           
         }
         .container div{
             height: 25px;
@@ -40,7 +41,6 @@
             background-color: black;
             align-self: center;
         }
-
         .top-left{
             grid-area: top-left;
         }
@@ -62,42 +62,96 @@
         .center{
             grid-area: center;
         }
+        .scene{
+            width: 120px;
+            height: 120px;
+            margin: 100px auto;
+            perspective: 800px;
+        }
+        .cube{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: spin 18s infinite linear;
+            animation-play-state: paused;
+           
+        }
+        .front     { transform: rotateY(0deg) translateZ(60px);}
+        .back      { transform: rotateY(180deg) translateZ(60px);}
+        .left-cube { transform: rotateY(-90deg) translateZ(60px);}
+        .right-cube{ transform: rotateY(90deg) translateZ(60px);}
+        .top       { transform: rotateX(90deg) translateZ(60px);}
+        .bottom    { transform: rotateX(-90deg) translateZ(60px);}
+         
+        .btn{
+            display:none;
+        }
+        .btn:checked ~ .scene .cube{
+            animation-play-state: running;
+        }
+        .lable-btn{
+            text-align: center;
+        }
+        .button{
+            padding: 10px 20px;
+            background-color: #1da18e;
+            color: antiquewhite;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover{
+                background-color: #178d7b;
+                color: white;
+            }
+        }
+        @keyframes spin{
+            from{transform: rotateX(0deg) rotateY(0deg);}
+            to{transform: rotateX(360deg) rotateY(720deg);}
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="center"></div>
+  <input type="checkbox" class="btn" id="hidden-btn">
+    <div class="scene">
+        <div class="cube">
+             <div class="container front">
+                <div class="center"></div>
+            </div>
+            <div class="container back">
+                <div class="top-left"></div>
+                <div class="bottom-right"></div>
+            </div>
+            <div class="container left-cube">
+                <div class="top-left"></div>
+                <div class="center"></div>
+                <div class="bottom-right"></div>
+            </div>
+            <div class="container right-cube">
+                <div class="top-left"></div>
+                <div class="bottom-left"></div>
+                <div class="top-right"></div>
+                <div class="bottom-right"></div>
+            </div>
+            <div class="container top">
+                <div class="top-left"></div>
+                <div class="bottom-left"></div>
+                <div class="center"></div>
+                <div class="top-right"></div>
+                <div class="bottom-right"></div>
+            </div>
+            <div class="container bottom">
+                <div class="top-left"></div>
+                <div class="left"></div>
+                <div class="bottom-left"></div>
+                <div class="top-right"></div>
+                <div class="right"></div>
+                <div class="bottom-right"></div>
+            </div>
+        </div>
     </div>
-
-     <div class="container">
-        <div class="top-left"></div>
-        <div class="bottom-right"></div>
-    </div>
-     <div class="container">
-        <div class="top-left"></div>
-        <div class="center"></div>
-        <div class="bottom-right"></div>
-    </div>
-     <div class="container">
-        <div class="top-left"></div>
-        <div class="bottom-left"></div>
-        <div class="top-right"></div>
-        <div class="bottom-right"></div>
-    </div>
-     <div class="container">
-        <div class="top-left"></div>
-        <div class="bottom-left"></div>
-        <div class="center"></div>
-        <div class="top-right"></div>
-        <div class="bottom-right"></div>
-    </div>
-     <div class="container">
-        <div class="top-left"></div>
-        <div class="left"></div>
-        <div class="bottom-left"></div>
-        <div class="top-right"></div>
-        <div class="right"></div>
-        <div class="bottom-right"></div>
+    <div class="lable-btn">
+        <label for="hidden-btn" class="button">Click Me!</label>
     </div>
 </body>
 </html>
