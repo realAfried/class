@@ -10,3 +10,9 @@ html/56/weather.html
 html/56/dice.html
 html/56/dice.html
 js/59/index.html
+js/63/node_modules
+.vscode/settings.json
+js/63/eslint.config.mjs
+js/63/package-lock.json
+js/63/package.json
+js/63/style.css
