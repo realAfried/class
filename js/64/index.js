@@ -18,5 +18,5 @@ $('#vp').hide();
 $('#vp').display();
 $('#vp').css('fontSize', '8em');
 $('#vp').sparkle('color',1000, 5000);
-
+potus.move();
 $('h1').css('fontSize', '3em');

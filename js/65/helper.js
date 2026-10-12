@@ -26,7 +26,6 @@ function sparkle(element,property,speed, time){
     setTimeout(()=>{
     clearInterval(interval)
     },time);
-
 }
 
 function addClass(element, className){

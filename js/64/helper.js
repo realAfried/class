@@ -22,15 +22,28 @@ function sparkle(element,property,speed, time){
     time = time ?? 6000;
     let interval =  setInterval(()=>{
         setCss(element,property,getRandomColor());
-    },speed)
+    },speed);
     setTimeout(()=>{
     clearInterval(interval)
-    },time)
+    },time);
 
 }
 
 function getRandomColor() {
   return `#${Math.floor(Math.random() * 16777217).toString('16').padStart(6, '0')}`;
+}
+
+function move(element){
+    let position = getCss(element,'left');
+    console.log(position);
+    position = parseInt(position);
+    console.log(position);
+    setInterval(()=>{
+        position += 50;
+        setCss(element,'left',position + 'px');
+        console.log(position);
+    }, 3000);
+
 }
 
 export default function(selector){
@@ -48,7 +61,7 @@ export default function(selector){
         click: callback => click(element, callback),
         hide: ()=> setCss(element,'display', 'none'),
         display: ()=> setCss(element,'display','inline-block'),
-        sparkle:(property, time) => sparkle(element,property,time)
-        
+        sparkle:(property, time) => sparkle(element,property,time),
+        move: () => move(element)
     };
 }
