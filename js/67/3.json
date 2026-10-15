@@ -1,0 +1,13 @@
+{
+  "id": 3,
+  "name": "Spaghetti",
+  "picture": "https://upload.wikimedia.org/wikipedia/commons/9/92/Spaghettoni.jpg",
+  "ingredients": [
+    "1 lb spaghetti",
+    "2 tbsp olive oil",
+    "3 cloves garlic",
+    "1 can crushed tomatoes",
+    "salt and pepper",
+    "basil"
+  ]
+}

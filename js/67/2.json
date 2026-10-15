@@ -1,0 +1,13 @@
+{
+  "id": 2,
+  "name": "Guacamole",
+  "picture": "https://upload.wikimedia.org/wikipedia/commons/6/64/Guacamole_IMGP1271.jpg",
+  "ingredients": [
+    "2 avocados",
+    "1/2 onion, diced",
+    "1 tomato, diced",
+    "1 lime",
+    "salt",
+    "cilantro"
+  ]
+}

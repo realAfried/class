@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            text-align: center;
+        }
+        hr {
+            margin: 0;
+        }
+        main {
+            flex: 1;
+            padding: 1rem;
+        }
+        footer {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        #recipeContainer {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        #recipeSelect {
+            padding: 0.5rem;
+            font-size: 1rem;
+
+            &:hover {
+                background-color: #e0e0e0;
+            }
+        }
+        #showRecipe{
+            display:none;
+            margin: 0 auto;
+            width: fit-content;
+            text-align: center;
+
+            img{
+              width: 300px;  
+              height: 300px;
+              
+            }
+        }
+
+        ul{
+            list-style-type: none;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header><h1>My Recipes</h1></header>
+    <hr>
+    <main>
+        <div id="recipeContainer">
+            <select id="recipeSelect">
+                <option value="" disabled selected hidden>choose a recipe</option>
+            </select>
+        </div>
+        <div id="showRecipe" >
+            <h2 id="name"></h2>
+            <div>
+                <img src="" alt="" id="imgRecipe">
+            </div>
+            <ul id="ing">
+
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>© 2026 My Recipes. All rights reserved.</p>
+    </footer>
+    <script src="recipe.js" type="module"></script>
+</body>
+</html>
