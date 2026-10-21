@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Maps</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            min-height: 0;
+        }
+        aside {
+            width: 300px;
+            background-color: #f4f4f4;
+            padding: 0 1em 1em;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+        aside::-webkit-scrollbar {
+            display: none;
+        }
+        .search-bar {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            flex-shrink: 0;
+            background-color: #f4f4f4;
+            padding: 1em 0 0.5em;
+        }
+        .search-box {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+        .search-box:focus-within {
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.25);
+        }
+        #search {
+            flex: 1;
+            min-width: 0;
+            border: none;
+            outline: none;
+            padding: 0.7em 1em;
+            font-size: 1em;
+        }
+        #searchButton {
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0 1.2em;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        #searchButton:hover {
+            background-color: #3e8e41;
+        }
+        #results {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+
+        .card {
+            flex-shrink: 0;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
+        .card img {
+            display: block;
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card h3 {
+            margin: 0.75em 1em 0.25em;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .card p {
+            margin: 0 1em 0.75em;
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+        .card a {
+            display: inline-block;
+            margin: 0 1em 1em;
+            color: #4CAF50;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        .card a:empty,
+        .card p:empty,
+        .card h3:empty {
+            display: none;
+        }
+        main {
+            flex: 1;
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .map-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .popup {
+            width: 250px;
+            font-family: Arial, sans-serif;
+        }
+        .popup img {
+            display: block;
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .popup h3 {
+            margin: 0.6em 0 0.25em;
+            font-size: 1.05em;
+            color: #333;
+        }
+        .popup p {
+            margin: 0 0 0.75em;
+            font-size: 0.85em;
+            color: #666;
+            line-height: 1.4;
+            max-height: 6em;
+            overflow-y: auto;
+        }
+        .popup a {
+            display: inline-block;
+            padding: 0.4em 1em;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .popup a:hover {
+            background-color: #3e8e41;
+        }
+        .popup p:empty,
+        .popup h3:empty {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>My Maps</header>
+    <div class="content">
+        <aside>
+            <div class="search-bar">
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="Search for a location">
+                    <button id="searchButton">Search</button>
+                </div>
+            </div>
+            <div id="results">
+            </div>
+        </aside>
+        <main>
+            <div id="map"></div>
+        </main>
+    </div>
+    <footer>Copyright © 2026 My Maps. All rights reserved.</footer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=PlaceForAPIKeylibraries=markers,infoWindow"></script>
+    <script src="map.js" type="module"></script>
+</body>
+</html>
