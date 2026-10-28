@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            margin: 0;
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 370px 1fr;
+            grid-template-rows: 60px 1fr;
+        }
+        header{
+            grid-column: 1/3;
+            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        aside{
+            background-color: rgb(56, 127, 127);
+        }
+        main{
+            background-image: url("https://picsum.photos/id/10/1200/800") ;
+        }
+        .buttons{
+            display: flex;
+            gap: 10px;
+        }
+        button{
+            border-radius: 25px;
+            background-color: blue;
+            border: none;
+            color: azure;
+        }
+        #play{
+            position: relative;       
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+
+        #tray {
+             display: grid;
+             grid-template-columns: repeat(2, 1fr);  /* 2 cards per row */
+             gap: 10px;
+             padding: 10px;
+             align-content: start;   /* keep cards at the top instead of spreading out */
+             overflow-y: auto;       /* scroll if there are too many parts */
+            }
+
+        .tray-part {
+             width: 100%;
+             aspect-ratio: 1;        /* always a perfect square */
+             object-fit: contain;    /* shrink the picture to fit without stretching it */
+             padding: 8px;           /* breathing room around the picture */
+             box-sizing: border-box; /* padding stays inside the square */
+             background: white;
+             border-radius: 12px;
+             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+             cursor: grab;           /* hand cursor shows it can be picked up */
+             transition: transform 0.15s;
+            }
+
+        .tray-part:hover {
+             transform: scale(1.08); /* grows a little when you point at it */
+        }
+        .board-part{
+            position: absolute;
+            width: 100px;
+        }
+        .img-body {
+             height: 400px;
+             width: 250px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Potato Head Game</h1>
+        <div class="buttons">
+            <button id="music">Music</button>
+            <button id="background">Background</button>
+            <button id="save">Save</button>
+            <button id="load">Load</button>
+            <audio src="potato-song.wav" controls></audio>
+        </div>
+    </header>
+    <aside id="tray">
+    </aside>
+    <main id="play">
+        <!-- <div> -->
+            <!-- <img class="img-body" src="parts/body-2.png" alt="potato body"> -->
+        <!-- </div> -->
+    </main>
+    <script src="potatohead.js" type="module"></script>
+    <!-- <footer></footer> -->
+</body>
+</html>
