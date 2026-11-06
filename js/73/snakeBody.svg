@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- body segment, same greens as snakeHead.png -->
+  <rect x="3" y="3" width="58" height="58" rx="22" fill="#98D271"/>
+  <!-- belly patch, same yellow as the head -->
+  <ellipse cx="32" cy="32" rx="14" ry="14" fill="#FFD680"/>
+  <!-- scale spots -->
+  <circle cx="14" cy="14" r="4" fill="#7AB85A"/>
+  <circle cx="50" cy="14" r="4" fill="#7AB85A"/>
+  <circle cx="14" cy="50" r="4" fill="#7AB85A"/>
+  <circle cx="50" cy="50" r="4" fill="#7AB85A"/>
+</svg>

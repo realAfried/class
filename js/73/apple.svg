@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- stem -->
+  <path d="M32 18 C32 12 34 8 37 5" stroke="#6b4423" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- leaf -->
+  <path d="M35 11 C40 4 50 4 53 8 C48 14 40 15 35 11 Z" fill="#4caf50"/>
+  <path d="M36 11 C42 9 47 8 52 8" stroke="#2e7d32" stroke-width="1" fill="none"/>
+  <!-- apple body -->
+  <path d="M32 20 C26 15 12 15 8 27 C4 40 12 58 22 60 C27 61 29 58 32 58 C35 58 37 61 42 60 C52 58 60 40 56 27 C52 15 38 15 32 20 Z" fill="#d32f2f"/>
+  <!-- shading -->
+  <path d="M44 22 C52 26 55 38 50 50 C47 56 43 58 40 58 C48 50 50 36 44 22 Z" fill="#b71c1c" opacity="0.6"/>
+  <!-- highlight -->
+  <ellipse cx="18" cy="30" rx="4" ry="7" fill="#ffffff" opacity="0.45" transform="rotate(20 18 30)"/>
+</svg>
