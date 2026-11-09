@@ -1,0 +1,41 @@
+[
+  { "name": "Body",          "category": "body",    "src": "parts/body-1.png" },
+
+  { "name": "Googly Eyes",       "category": "eyes",    "src": "parts/eyes-1.png" },
+  { "name": "Big Eyes",          "category": "eyes",    "src": "parts/eyes-2.png" },
+  { "name": "Lashes",            "category": "eyes",    "src": "parts/eyes-lashes.png" },
+  { "name": "Blue Eyes",         "category": "eyes",    "src": "parts/eyes-blue.png" },
+
+  { "name": "Red Glasses",       "category": "glasses", "src": "parts/glasses-red.png" },
+  { "name": "Disguise",          "category": "glasses", "src": "parts/disguise-glasses.png" },
+
+  { "name": "Left Ear",          "category": "ears",    "src": "parts/ear-left.png" },
+  { "name": "Right Ear",         "category": "ears",    "src": "parts/ear-right.png" },
+
+  { "name": "Orange Nose",       "category": "nose",    "src": "parts/nose.png" },
+  { "name": "Clown Nose",        "category": "nose",    "src": "parts/nose-red.png" },
+
+  { "name": "Big Smile",         "category": "mouth",   "src": "parts/mouth-teeth.png" },
+  { "name": "Mustache",          "category": "mouth",   "src": "parts/mouth-mustache.png" },
+  { "name": "Red Lips",          "category": "mouth",   "src": "parts/lips.png" },
+  { "name": "Grin",              "category": "mouth",   "src": "parts/mouth-grin.png" },
+  { "name": "Handlebar Mustache","category": "mouth",   "src": "parts/mustache-handlebar.png" },
+  { "name": "Bushy Mustache",    "category": "mouth",   "src": "parts/mustache-bushy.png" },
+
+  { "name": "Cartoon Eyes",      "category": "eyes",    "src": "parts/eyes-3.png" },
+  { "name": "Eyebrows",          "category": "eyebrows","src": "parts/eyebrows.png" },
+
+  { "name": "Pink Left Ear",     "category": "ears",    "src": "parts/ear-left-2.png" },
+  { "name": "Pink Right Ear",    "category": "ears",    "src": "parts/ear-right-2.png" },
+
+  { "name": "Pink Nose",         "category": "nose",    "src": "parts/nose-2.png" },
+
+  { "name": "Brown Hat",         "category": "hats",    "src": "parts/hat-brown.png" },
+  { "name": "Blue Hat",          "category": "hats",    "src": "parts/hat-blue.png" },
+
+  { "name": "Left Arm",          "category": "arms",    "src": "parts/arm-left.png" },
+  { "name": "Right Arm",         "category": "arms",    "src": "parts/arm-right.png" },
+
+  { "name": "Left Shoe",         "category": "feet",    "src": "parts/shoe-1.png" },
+  { "name": "Right Shoe",        "category": "feet",    "src": "parts/shoe-2.png" }
+]

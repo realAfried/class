@@ -101,8 +101,10 @@ function startGameLoop(){
     if(applePosition.x == x && applePosition.y == y){
       score++;
       appleSound();
-      appleX = Math.floor(Math.random() * (theCanvas.width / SNAKE_SIZE)) * SNAKE_SIZE;
-      appleY = Math.floor(Math.random() * (theCanvas.height / SNAKE_SIZE)) * SNAKE_SIZE;
+      do{
+        appleX = Math.floor(Math.random() * (theCanvas.width / SNAKE_SIZE)) * SNAKE_SIZE;
+        appleY = Math.floor(Math.random() * (theCanvas.height / SNAKE_SIZE)) * SNAKE_SIZE;
+      }while(isOnSnake(appleX, appleY));
       if(speed > 100){
         speed -= 25;
       }
@@ -135,4 +137,8 @@ function checkCollision(x, y, snakeSegments) {
     return segment.x === x && segment.y === y;
   });
   return hitSegment;
+};
+
+function isOnSnake(px, py) {
+  return snakeSegments.some(seg => seg.x === px && seg.y === py);
 };

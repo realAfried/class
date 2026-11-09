@@ -1,0 +1,12 @@
+[
+  { "name": "Waterfall",    "src": "https://picsum.photos/id/15/1200/800" },
+  { "name": "Woods",        "src": "https://picsum.photos/id/28/1200/800" },
+  { "name": "Mountain",     "src": "https://picsum.photos/id/29/1200/800" },
+  { "name": "River Valley", "src": "https://picsum.photos/id/1015/1200/800" },
+  { "name": "Canyon",       "src": "https://picsum.photos/id/1016/1200/800" },
+  { "name": "Peaks",        "src": "https://picsum.photos/id/1018/1200/800" },
+  { "name": "Snowy Trees",  "src": "https://picsum.photos/id/1036/1200/800" },
+  { "name": "Falls",        "src": "https://picsum.photos/id/1039/1200/800" },
+  { "name": "Lake",         "src": "https://picsum.photos/id/1043/1200/800" },
+  { "name": "Forest",       "src": "https://picsum.photos/id/10/1200/800" }
+]
