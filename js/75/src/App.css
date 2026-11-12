@@ -1,0 +1,16 @@
+body{
+  background-color: #e6d596;
+  display: flex;
+  height: 100vh;  
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  /* text-align: center; */
+}
+
+h1{
+  
+  color: #175e21;
+  font-size: 3em;
+  text-decoration: underline;
+}
