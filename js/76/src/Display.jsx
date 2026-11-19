@@ -3,12 +3,12 @@ import Weather from "./Weather"
 import { useState, useEffect } from "react"
 
 export default function Display() {
-    const [weather, setWeather] = useState([]);
+    const [weather, setWeather] = useState(null);
 
     useEffect(() => {
         (async () => {
             try {
-                const API_KEY = 'API_KEY';
+                const API_KEY = '';
                 const r = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=08701&appid=${API_KEY}&units=imperial&lang=he`);
 
                 const weatherData = await r.json();
@@ -18,6 +18,7 @@ export default function Display() {
                     throw new Error(`${r.status} - ${r.statusText} - ${weatherData.message}`);
                 }
                 setWeather(weatherData);
+              
                 console.log(weatherData);
             } catch (e) {
                 console.error('oops', e);
@@ -25,7 +26,7 @@ export default function Display() {
         })()
     }, [])
 
-    if (weather.length === 0) {
+    if (weather === null) {
         return (
             // <NoWeather />
             <div/>
