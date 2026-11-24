@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "chulent",
+    "ingredients": ["meat", "potatoes", "all sorts of beans"],
+    "picture": "images/chulent.jpg"
+  },
+  {
+    "id": 2,
+    "name": "macaroni",
+    "ingredients": ["macaroni", "salt", "water"],
+    "picture": "images/macaroni.jpg"
+  },
+  {
+    "id": 3,
+    "name": "hard boiled eggs",
+    "ingredients": ["eggs", "water"],
+    "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtOlrC7Q-vumU9dlIbJbnnmPzclvP89kwjw6bOBb1x8g&s=10"
+  }
+]
